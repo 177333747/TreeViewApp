@@ -34,5 +34,22 @@ $(document).ready(function(){
 		});
 	}
 
+	$('#rmv-btn').on('click', function(e) {
+		var id = $(this).attr('data-itm-id');
+		var pid = $(this).attr('data-itm-pid');
+		if (confirm('are you sure you want to delete this item?')) {
+			$.ajax({
+				url:'delete.php',
+				method:'POST',
+				data:'id='+id+'&pid='+pid,
+				success: function(data) {
+					fill_treeview();
+					fill_parent_items();
+					$('#treeview_form')[0].reset();			
+					alert('Item deleted successfully..!');
+				}
+			})
+		}
+	});
 });
 
