@@ -34,6 +34,21 @@ $(document).ready(function(){
 		});
 	}
 
+	$('#treeview_form').on('submit', function(event){
+		event.preventDefault();
+		$.ajax({
+		url:"add.php",
+		method:"POST",
+		data:$(this).serialize(),
+		success:function(data){
+			fill_treeview();
+			fill_parent_items();
+				$('#treeview_form')[0].reset();
+				alert('New Item added successfully..!');
+			}
+		})
+	});
+
 	$('#rmv-btn').on('click', function(e) {
 		var id = $(this).attr('data-itm-id');
 		var pid = $(this).attr('data-itm-pid');
