@@ -10,6 +10,13 @@ foreach($result as $row)
 }
 echo json_encode(array_values($data));
 
+
+/**
+ * @param mixed $parent_id
+ * @param mixed $conn
+ * 
+ * @return [type]
+ */
 function get_node_data($parent_id, $conn)
 {
   $query = "SELECT * FROM tbl_items WHERE parent_id = '".$parent_id."'";
