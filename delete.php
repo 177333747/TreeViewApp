@@ -4,5 +4,3 @@
 		$sql = "DELETE FROM tbl_items WHERE id = '".$_POST['id']."' OR parent_id = '".$_POST['id']."'";
 		$res = mysqli_query($conn, $sql);
 	}
-
-?>

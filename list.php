@@ -28,5 +28,3 @@ function get_node_data($parent_id, $conn)
   }
   return $output;
 }
-
-?>

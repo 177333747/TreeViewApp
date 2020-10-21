@@ -1,8 +1,17 @@
-
+/**
+ * @param  {} document
+ * @param  {} .ready(function(
+ */
 $(document).ready(function(){
+
 	fill_parent_items();
 	fill_treeview();
-
+	
+	/**
+	 * @param  {"list.php"} {$.ajax({url
+	 * @param  {"json"} dataType
+	 * @param  {function(data} success
+	 */
 	function fill_treeview()
 	{
 		$.ajax({
@@ -23,7 +32,11 @@ $(document).ready(function(){
 			}
 		})
 	}
-
+	
+	/**
+	 * @param  {'sub_items.php'} {$.ajax({url
+	 * @param  {function(data} success
+	 */
 	function fill_parent_items()
 	{
 		$.ajax({
@@ -33,7 +46,15 @@ $(document).ready(function(){
 			}
 		});
 	}
-
+	/**
+	 * @param  {} '#treeview_form'
+	 * @param  {} .on('submit'
+	 * @param  {} function(event
+	 * @param  {} {event.preventDefault(
+	 * @param  {"add.php"} ;$.ajax({url
+	 * @param  {"POST"} method
+	 * @param  {$(this} data
+	 */
 	$('#treeview_form').on('submit', function(event){
 		event.preventDefault();
 		$.ajax({
@@ -48,7 +69,20 @@ $(document).ready(function(){
 			}
 		})
 	});
-
+	/**
+	 * @param  {} '#rmv-btn'
+	 * @param  {} .on('click'
+	 * @param  {} function(e
+	 * @param  {} {varid=$(this
+	 * @param  {} .attr('data-itm-id'
+	 * @param  {} ;varpid=$(this
+	 * @param  {} .attr('data-itm-pid'
+	 * @param  {} ;if(confirm('areyousureyouwanttodeletethisitem?'
+	 * @param  {'delete.php'} {$.ajax({url
+	 * @param  {'POST'} method
+	 * @param  {'id='+id+'&pid='+pid} data
+	 * @param  {function(data} success
+	 */
 	$('#rmv-btn').on('click', function(e) {
 		var id = $(this).attr('data-itm-id');
 		var pid = $(this).attr('data-itm-pid');
